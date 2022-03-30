@@ -5,7 +5,7 @@
 	box-sizing: border-box;
 }
 .MainNavigation {
-	background-color: #d8b4fe;
+	background-color: #d8b4fec0;
 	width: 100%;
 	height: 4rem;
 	display: flex;
@@ -18,14 +18,38 @@
 	align-items: center;
 	justify-content: center;
 }
+.cartLink{
+position: relative;
+
+
+}
 .MainNavigation li a {
 	margin: 0 1rem;
 	text-decoration: none;
-	font-size: 1.5rem;
+	font-size: 1rem;
 	padding: 0.25rem 1rem;
 }
 .MainNavigation a:hover,.activeLink {
 	background-color: #f3e8ff;
     border-radius: 1rem;
-	color: #c084fc;
+	color: #581c87;
+}
+.MainNavigation li{
+	display: flex;
+	
+}
+.MainNavigation span{
+	position: absolute;
+	background-color: #581c87;
+	color: white;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	font-size: 14px;
+	padding: 5px;
+	display: flex;
+	right: 10px;
+	top: -3px;
+	align-items: center;
+	justify-content: center;
 }
