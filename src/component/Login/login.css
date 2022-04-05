@@ -1,0 +1,18 @@
+button:disabled {
+	cursor: not-allowed;
+	color: #6b6b6b;
+	background-color: #e4ccee;
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+.LoginText {
+	margin-top: 20px;
+	/* color: #a855f7; */
+	font-family: "Lobster", cursive;
+	/* font-size: 72px; */
+	background: -webkit-linear-gradient(rgb(160, 248, 211), rgb(224, 99, 208));
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}

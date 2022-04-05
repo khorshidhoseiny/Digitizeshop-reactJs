@@ -1,7 +1,7 @@
 .cartItems {
 	display: flex;
 	flex-direction: column;
-    width: 50%;
+	width: 50%;
 	border-radius: 10px;
 }
 .item {
@@ -33,8 +33,44 @@
 
 .cartSummary {
 	background-color: rgb(252, 252, 252);
-	width: 200px;
-	height: 200px;
+	width: 300px;
+	height: 250px;
 	border-radius: 10px;
 	margin-left: 3rem;
+	padding: 1rem;
+	border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+.cartSummary a{
+    width: 100%;
+}
+.SummeryItems {
+	margin-top: 25px;
+    
+}
+.btnGroup button {
+	outline: none;
+	background-color: white;
+	color: #581c87;
+	border: 1px solid #581c87;
+    padding: 5px 10px;
+}
+.btnGroup button:first-child{
+    border-radius: 5px 0px 0px 5px;
+}
+.btnGroup button:last-child{
+    border-radius: 0 5px 5px 0px;
+}
+.btnGroup button:nth-child(2){
+    border-left: 0;
+    border-right: 0;
+}
+.SummaryItem {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
 }

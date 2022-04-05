@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta&display=swap");
+
+input[type="email"],
+input[type="tel"],
+input[type="text"],
+input[type="password"],
+select {
+	width: 300px;
+	height: 30px;
+	background-color: #c4d0f7fb;
+	color: rgb(4, 53, 99);
+	border: 1.5px solid rgba(43, 42, 42, 0.507);
+	padding: 0 5px;
+	font-size: 1rem;
+	font-family: "Mukta", cursive;
+	outline: none;
+	border-radius: 10px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+.signUpText {
+	margin-top: 20px;
+	/* color: #a855f7; */
+	font-family: "Lobster", cursive;
+	/* font-size: 72px; */
+	background: -webkit-linear-gradient(rgb(160, 248, 211), rgb(224, 99, 208));
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.switchAccount{
+	color: rgb(156, 66, 216);
+}
+button:disabled {
+	cursor: not-allowed;
+	color: #6b6b6b;
+	background-color: #e4ccee;
+}
+form {
+	margin-top: 10px;
+}
+.formContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.formControl {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 8px;
+}
+.error {
+	color: red;
+	font-family: "Noto Sans Arabic", sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+}
+button {
+	padding: 5px;
+	background-color: white;
+	border-radius: 10px;
+	border: 1px solid rgb(150, 147, 147);
+	margin-top: 10px;
+}
+button:disabled {
+	cursor: no-drop;
+	color: #6b6b6b;
+}
+input:focus {
+	background: linear-gradient(
+		90deg,
+		rgba(117, 110, 255, 0.226) 45%,
+		rgba(0, 255, 140, 0.342) 100%
+	);
+	color: white;
+	font-weight: 200;
+}
+input:visited {
+	color: red;
+	background-color: blue;
+}
+@import url("https://fonts.googleapis.com/css2?family=Boogaloo&display=swap");
+label {
+	font-family: "Boogaloo", cursive;
+	margin-right: 10px;
+	color: rgb(7, 32, 71);
+}
