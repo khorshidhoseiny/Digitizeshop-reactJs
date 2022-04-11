@@ -1,0 +1,24 @@
+.userContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.imgDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+.imgDiv img{
+    border-radius: 50%;
+    border: 1px solid #050000;
+    width: 200px;
+    height: 200px;
+}
+.userInfo div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -12,6 +12,13 @@
 	align-items: center;
 	justify-content: center;
 }
+.MainNavigation nav{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	position: sticky;
+	margin: 0 50px;
+}
 
 .MainNavigation ul {
 	display: flex;

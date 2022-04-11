@@ -3,6 +3,13 @@ button:disabled {
 	color: #6b6b6b;
 	background-color: #e4ccee;
 }
+.signupLink{
+	color: #c3ee74;
+	text-shadow: 1px 1px 1px #e2aff8;
+	list-style: none;
+	text-decoration: none;
+font-size: bold
+}
 
 
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");

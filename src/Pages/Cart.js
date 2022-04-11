@@ -75,7 +75,7 @@ const CartSummery = ({ total, cart }) => {
 					<p> {total}</p>
 					
 				</div>
-				<Link to={"/checkout"}>
+				<Link to={"/signup?redirect=checkout"}>
 					<button className="btn" style={{margin:"20px 0",width:"100%",}}>Go to Checkout</button>
 				</Link>
 			</div>
