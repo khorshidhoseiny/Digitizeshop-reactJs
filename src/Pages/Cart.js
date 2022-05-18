@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useCart, useCartAction } from "../Context/CartProvider";
 import Layout from "../Layout/Layout";
+// import EmptyBox from "../../public/assets/empty-box.svg";
 import "../Pages/cart.css";
 
 const CartPage = () => {
@@ -10,7 +11,9 @@ const CartPage = () => {
 	if (!cart.length) {
 		return (
 			<Layout>
-				<h2>cart is Empty</h2>
+				<img className="empty-cart" src={process.env.PUBLIC_URL + `/assets/empty-box.png`}/>
+				<h2> Your Cart Is Empty ! </h2>
+				<h5>Looks like you havent added anything to your cart yet </h5>
 			</Layout>
 		);
 	}

@@ -74,7 +74,7 @@ input:focus {
 		rgba(117, 110, 255, 0.226) 45%,
 		rgba(0, 255, 140, 0.342) 100%
 	);
-	color: white;
+	color: rgb(72, 30, 112);
 	font-weight: 200;
 }
 input:visited {
@@ -85,5 +85,5 @@ input:visited {
 label {
 	font-family: "Boogaloo", cursive;
 	margin-right: 10px;
-	color: rgb(7, 32, 71);
+	color: #581c87;
 }

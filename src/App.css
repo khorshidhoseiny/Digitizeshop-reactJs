@@ -8,7 +8,6 @@
   grid-column-gap: 3rem;
   grid-row-gap: 3rem;
   max-width: 1170px;
-  /* background: #ccc; */
   justify-content: center;
   align-items: center;
 
@@ -16,30 +15,41 @@
 .productImg img {
 	width: 100%;
 	height: auto;
-  /* margin-top: 10px; */
   border-radius: 1rem;
+  padding: 10px;
 
 }
 
 
 .btn{
-  background-color: #818cf8;
+  background-color: #581c87;
   color: white;
   padding: 0.5rem 0.75rem;
   outline: none;
   border-radius: 10px;
   border: none;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .ProductDesc{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #e0f2fe;
+  background-color: #d8b4fec0;
   padding: 0.5rem 1rem;
+  gap: 0 10px;
+  border-radius: 1rem;
 }
+.p-name{
+  font-weight: bold;
+  color: rgb(72, 30, 112);
+}
+
 .Product{
   background-color: #f6f6f6;
+  box-shadow: 4px 4px 22px rgba(0, 0, 0, 0.397);
   border-radius: 10px;
   margin: 2rem 1rem;
   display: flex;

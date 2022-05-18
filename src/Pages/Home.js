@@ -27,8 +27,8 @@ const HomePage = () => {
 									<img alt={product.name} src={product.image} />
 								</div>
 								<div className="ProductDesc">
-									<p>{product.name}</p>
-									<p>${product.price}</p>
+									<p className="p-name">{product.name}</p>
+									<p className="p-price">${product.price}</p>
 									<button
 										className="btn"
 										onClick={() => addToCartHandler(product)}

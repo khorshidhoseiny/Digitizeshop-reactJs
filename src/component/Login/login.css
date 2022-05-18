@@ -4,20 +4,19 @@ button:disabled {
 	background-color: #e4ccee;
 }
 .signupLink{
-	color: #c3ee74;
-	text-shadow: 1px 1px 1px #e2aff8;
+	color: #b374ee;
+	text-shadow: 4px 4px 8px #c8a3d8;
 	list-style: none;
 	text-decoration: none;
 font-size: bold
 }
 
 
+
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 .LoginText {
 	margin-top: 20px;
-	/* color: #a855f7; */
 	font-family: "Lobster", cursive;
-	/* font-size: 72px; */
 	background: -webkit-linear-gradient(rgb(160, 248, 211), rgb(224, 99, 208));
 	-webkit-background-clip: text;
 	background-clip: text;
