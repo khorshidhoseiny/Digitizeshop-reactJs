@@ -38,7 +38,7 @@ const Navigation = () => {
           <li className="LoginLink">
             <NavLink
               to={userAuth ? "/profile" : "/login"}
-              activeClassName="activeLink"
+              className={(navlink)=>navlink.isActive ?"activeLink":""}
               exact
             >
               {userAuth ? userAuth.name : "Login"}

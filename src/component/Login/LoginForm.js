@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import "./login.css";
 import { LoginUsers } from "../../service/LoginService";
 import { useState } from "react";
-import { withRouter } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useAuth, useAuthAction } from "../../Context/AuthProvider";
@@ -12,6 +12,7 @@ import { useQuery } from "../../hooks/useQuery";
 import { useEffect } from "react";
 
 const LoginForm = ({ history }) => {
+  const params=useParams();
   const query = useQuery();
   const redirect = query.get("redirect") || "/"; // اینجا رو نفهمیدم //
   const auth = useAuth();
@@ -87,4 +88,4 @@ const LoginForm = ({ history }) => {
   );
 };
 
-export default withRouter(LoginForm);
+export default LoginForm;

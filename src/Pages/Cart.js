@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useCart, useCartAction } from "../Context/CartProvider";
 import Layout from "../Layout/Layout";
-// import EmptyBox from "../../public/assets/empty-box.svg";
+
 import "../Pages/cart.css";
 
 const CartPage = () => {

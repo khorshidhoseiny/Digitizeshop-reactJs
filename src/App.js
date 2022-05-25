@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./Pages/Home";
 import CartPage from "./Pages/Cart";
 import CartProvider from "./Context/CartProvider";
@@ -18,14 +18,14 @@ function App() {
         <AuthProvider>
           <CartProvider>
             <ToastContainer />
-            <Switch>
-              <Route path="/cart" component={CartPage} />
-              <Route path="/checkout" component={CheckOut} />
-              <Route path="/login" component={LoginPage} />
-              <Route path="/signup" component={SignUpPage} />
-              <Route path="/profile" component={ProfilePage} />ِ
-              <Route path="/" component={HomePage} />
-            </Switch>
+            <Routes>
+              <Route path="/cart" element={<CartPage/>} />
+              <Route path="/checkout" element={<CheckOut/>} />
+              <Route path="/login" element={<LoginPage/>} />
+              <Route path="/signup" element={<SignUpPage/>} />
+              <Route path="/profile" element={<ProfilePage/>} />ِ
+              <Route path="/" element={<HomePage/>} />
+            </Routes>
           </CartProvider>
         </AuthProvider>
       </Router>
