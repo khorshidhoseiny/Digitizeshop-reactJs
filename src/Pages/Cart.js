@@ -169,26 +169,5 @@ const CartSummery = ({ total, cart }) => {
   );
 };
 {
-  /* <div className={style.cartSummary}>
-        <div>
-          <span>قیمت کالا</span>
-          <p>{numberFormat(totalPrice + discount)} تومان</p>
-        </div>
-        <div>
-          <span>سود شما از این خرید</span>
-          <p>{numberFormat(discount)} تومان</p>
-        </div>
-        <p className={style.info}>
-          هزینه ارسال براساس آدرس، زمان تحویل، وزن و حجم مرسوله شما محاسبه
-          می‌شود
-        </p>
-        <div className={style.cartSummaryTotal}>
-          <div>
-            <span>جمع سبد خرید</span>
-            <p>{numberFormat(totalPrice)} تومان</p>
-          </div>
 
-          <Link to="/login">ادامه خرید</Link>
-        </div>
-      </div> */
 }
