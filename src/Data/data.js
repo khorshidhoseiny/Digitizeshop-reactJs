@@ -1,101 +1,70 @@
-import bcrypt from "bcryptjs";
-
 export const products = [
-
   {
-    id:1,
-    name: "Winter body",
-    description: [
-      { support: "گارانتی مادام العمر" },
-      { support: "ارسال رایگان" },
-      { support: "اورجینال" },
-    ],
-    price: 120,
-    offPrice: 120,
-    discount: 0,
-    image: "https://s4.uupload.ir/files/item1_soj.jpg",
-  }, 
-  {
-    id:2,
-    name: "Adidas",
-    description: [
-      { support: "گارانتی مادام العمر" },
-      { support: "اورجینال" },
-    ],
-    price: 110,
-    offPrice: 100,
-    discount: 8,
-   image:"https://s4.uupload.ir/files/item2_fc5s.jpg"
-  },  
-  {
-    id:3,
-    name: "Vans",
-    description: [
-      { support: "گارانتی مادام العمر" },
-      { support: "اورجینال" },
-      { support: "ارسال رایگان" },
-    ],
-    price: 99,
-    offPrice: 89,
-    discount: 10,
-   image:"https://s4.uupload.ir/files/item3_zvc9.jpg"
-  },  
-  {
-    id:4,
-    name: "White",
-    description: [
-      { support: "گارانتی مادام العمر" },
-      { support: "اورجینال" },
-      { support: "ارسال رایگان" },
-    ],
-    price: 260,
-    offPrice: 220,
-    discount: 15,
-   image:"https://s4.uupload.ir/files/item4_zr94.jpg"
+    name: "کفش مردانه سالومون راک مدل 411685",
+    size: 42,
+    fast: true,
+    star: 4.7,
+    price: 580000,
+    offPrice: 550000,
+    image: "https://s4.uupload.ir/files/item2_fc5s.jpg",
+    id: 1,
   },
   {
-    id:5,
-    name: "Croopped-shoe",
-    description: [
-      { support: "گارانتی مادام العمر" },
-      { support: "اورجینال" },
-      { support: "ارسال رایگان" },
-    ],
-    price: 150,
-    offPrice: 150,
-    discount: 0,
-   image:"https://s4.uupload.ir/files/item5_24ye.jpg"
-  },  
+    name: "کفش مردانه شوپا مدل lgr3006-LightGrey",
+    size: 42,
+    fast: false,
+    star: 4.5,
+    price: 920000,
+    offPrice: 890000,
+    image: "https://s4.uupload.ir/files/item3_zvc9.jpg",
+    id: 2,
+  },
   {
-    id:6,
-    name: "Blues",
-    description: [
-      { support: "گارانتی مادام العمر" },
-      { support: "اورجینال" },
-      { support: "ارسال رایگان" },
-    ],
-    price: 220,
-    offPrice:200,
-    discount:13,
-   image:"https://s4.uupload.ir/files/item6_7jfy.jpg"
-  }
+    name: "کفش مردانه آدیداس سفید مدل FX7979",
+    size:42,
+    fast: true,
+    star: 4.9,
+    price: 750000,
+    offPrice: 730000,
+    image: "https://s4.uupload.ir/files/item4_zr94.jpg",
+    id: 3,
+  },
+  {
+    name: " کفش کوهنوردی مدل jax کد 5320 ",
+    size: 42,
+    fast: false,
+    star: 3.9,
+    price: 490000,
+    offPrice: 480000,
+    image: "https://s4.uupload.ir/files/item5_24ye.jpg",
+    id: 4,
+  },
+  {
+    name: "کفش مردانه مدل کندو کد 9497",
+    size: 42,
+    fast: true,
+    star: 4.2,
+    price: 320000,
+    offPrice: 300000,
+    image: "https://s4.uupload.ir/files/item6_7jfy.jpg",
+    id: 5,
+  },
 ];
 
+export const sizeOptions = [
+  { value: 37, label: `سایز 37` },
+  { value: 38, label: `سایز 38` },
+  { value: 39, label: `سایز 39` },
+  { value: 40, label: `سایز 40` },
+  { value: 41, label: `سایز 41` },
+  { value: 42, label: `سایز 42` },
+  { value: 43, label: `سایز 43` },
+  { value: 44, label: `سایز 44` },
+];
 
-
-export const users = [
-  {
-    name: "Saheb mohamadi",
-    email: "saheb.ex@gmail.com",
-    password: bcrypt.hashSync("12345", 8),
-    phoneNumber: "09180000000",
-    isAdmin: true,
-  },
-  {
-    name: "John",
-    email: "user@example.com",
-    password: bcrypt.hashSync("1234", 8),
-    isAdmin: false,
-    phoneNumber: "09181230000",
-  },
+export const sortOptions = [
+  { value: "low", label: "ارزان ترین" },
+  { value: "high", label: "گران ترین" },
+  { value: "fast", label: "سریع ترین ارسال" },
+  { value: "star", label: "بیشترین امتیاز" },
 ];

@@ -1,4 +1,3 @@
-import userEvent from "@testing-library/user-event";
 import { useAuth } from "../Context/AuthProvider";
 import Layout from "../Layout/Layout";
 import "./profile.css";

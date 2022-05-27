@@ -1,7 +1,6 @@
 import { useFormik } from "formik";
-import Input from "../../common/Input";
+import Input from "../../common/Forms/Input";
 import * as Yup from "yup";
-import "./login.css";
 import { LoginUsers } from "../../service/LoginService";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
@@ -12,12 +11,12 @@ import { useQuery } from "../../hooks/useQuery";
 import { useEffect } from "react";
 
 const LoginForm = ({ history }) => {
-  const params=useParams();
+  const params = useParams();
   const query = useQuery();
-  const redirect = query.get("redirect") || "/"; // اینجا رو نفهمیدم //
+  const redirect = query.get("redirect") || "/";
   const auth = useAuth();
   useEffect(() => {
-    if(auth) history.push(redirect)
+    if (auth) history.push(redirect);
   }, [redirect]);
   console.log(redirect);
   const setAuth = useAuthAction();
@@ -60,28 +59,39 @@ const LoginForm = ({ history }) => {
   });
 
   return (
-    <div className="formContainer">
-      <h1 className="LoginText">Login</h1>
-      <form onSubmit={formik.handleSubmit}>
-        <Input label="Email" name="email" formik={formik} />
+    <div className="container bg-white justify-center flex-col items-center py-2 px-8 ">
+      <div className="items-start w-full flex flex-col relative ">
+        <h1 className="font-bold text-2xl">ورود</h1>
+        <p className="text-sm mt-2">
+          لطفا نام کاربری و رمز عبور خود را وارد کنید
+        </p>
+      </div>
+      <form onSubmit={formik.handleSubmit} className="w-full">
+        <Input label="آدرس ایمیل (نام کاربری)" name="email" formik={formik} />
 
         <Input
-          label="Password"
+          label="کلمه عبور"
           name="password"
           formik={formik}
           type="password"
         />
-        <p>
-          Don't have an account?
-          {
-            <Link className="signupLink" to={`/signup?redirect=${redirect}`}>
-              SignUp
-            </Link>
-          }{" "}
-        </p>
-        <button type="submit" className="btn" disabled={!formik.isValid}>
-          Log In
-        </button>
+        <div className="flex justify-between items-start">
+          <button
+            type="submit"
+            className="my-8 sm:text-sm bg-primary-color rounded-md disabled:bg-red-200 disabled:cursor-not-allowed disabled:text-gray-500  p-2 text-white"
+            disabled={!formik.isValid}
+          >
+            ورود
+          </button>
+          <p className="cursor-pointer">
+          
+            {
+              <Link  to={`/signup?redirect=${redirect}`}>
+                حساب کاربری نساخته اید؟ ثبت نام
+              </Link>
+            }{" "}
+          </p>
+        </div>
         {error && <p style={{ color: "red", fontsize: "12px" }}>{error}</p>}
       </form>
     </div>

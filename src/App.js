@@ -19,12 +19,12 @@ function App() {
           <CartProvider>
             <ToastContainer />
             <Routes>
-              <Route path="/cart" element={<CartPage/>} />
-              <Route path="/checkout" element={<CheckOut/>} />
-              <Route path="/login" element={<LoginPage/>} />
-              <Route path="/signup" element={<SignUpPage/>} />
-              <Route path="/profile" element={<ProfilePage/>} />ِ
-              <Route path="/" element={<HomePage/>} />
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="/checkout" element={<CheckOut />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/signup" element={<SignUpPage />} />
+              <Route path="/profile" element={<ProfilePage />} />ِ
+              <Route path="/" element={<HomePage />} />
             </Routes>
           </CartProvider>
         </AuthProvider>

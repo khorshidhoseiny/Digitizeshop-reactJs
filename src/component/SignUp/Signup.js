@@ -1,8 +1,8 @@
 import { useFormik } from "formik";
-import Input from "../../common/Input";
+import Input from "../../common/Forms/Input";
 import * as Yup from "yup";
-import "./Signup.css";
-import { Link,useParams } from "react-router-dom";
+import TermsBox from "../../common/Forms/TermsBox";
+import { Link, useParams } from "react-router-dom";
 import { signUpUsers } from "../../service/signup";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
@@ -10,9 +10,9 @@ import { useAuth, useAuthAction } from "../../Context/AuthProvider";
 import { useQuery } from "../../hooks/useQuery";
 
 const SignUpForm = ({ history }) => {
-  const params=useParams();
+  const params = useParams();
   const query = useQuery();
-  const redirect = query.get("redirect") || "/"; // اینجا رو نفهمیدم //
+  const redirect = query.get("redirect") || "/";
   const auth = useAuth();
   useEffect(() => {
     if (auth) history.push(redirect);
@@ -36,7 +36,6 @@ const SignUpForm = ({ history }) => {
     try {
       const { data } = await signUpUsers(userdata);
       setAuth(data);
-      // localStorage.setItem("authState", JSON.stringify(data));
       console.log(data);
       setError(null);
       history.push(redirect);
@@ -50,9 +49,13 @@ const SignUpForm = ({ history }) => {
   };
 
   const validationSchema = Yup.object({
-    name: Yup.string()
-      .required("وارد کردن اسم الزامی است")
-      .min(4, "لطفا اسم طولانی تری بنویسید"),
+    firstName: Yup.string()
+      .min(3, "نام نمی تواند کمتر از سه حرف باشد.")
+      .required("نام نمی تواند خالی باشد."),
+    lastName: Yup.string()
+      .min(3, "نام خانوادگی نمی تواند کمتر از سه حرف باشد.")
+      .required("نام خانوادگی نمی تواند خالی باشد."),
+
     email: Yup.string()
       .email("لطفا فرمت ایمیل وارد کنید")
       .required("وارد کردن ایمیل الزامی است"),
@@ -66,6 +69,10 @@ const SignUpForm = ({ history }) => {
         /^[0-9A-Za-z]*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>?][0-9a-zA-Z]*$/,
         "Need one special character"
       ),
+    terms: Yup.boolean().oneOf(
+      [true],
+      "لطفا موافقت با شرایط و استفاده از خدمات را تایید نمایید."
+    ),
     passwordConform: Yup.string()
       .required("وارد کردن تایید پسورد لازم است")
       .oneOf([Yup.ref("password"), null], "پسورد باید یکی باشد"),
@@ -80,36 +87,69 @@ const SignUpForm = ({ history }) => {
   });
 
   return (
-    <div className="formContainer">
-      <h1 className="signUpText">Create Account</h1>
-      <form onSubmit={formik.handleSubmit}>
-        <Input label="Name" name="name" formik={formik} />
-        <Input label="Email" name="email" formik={formik} />
+    <div className="container bg-white justify-center flex-col items-center py-2 px-8 ">
+      <div className="items-start w-full flex flex-col  relative ">
+        <h1 className="font-bold text-2xl">عضویت</h1>
+        <p className="text-sm mt-2">
+          لطفا برای عضویت اطلاعات این فرم را تکمیل کنید.
+        </p>
+      </div>
+      <form onSubmit={formik.handleSubmit} className="w-full" noValidate>
+        
+          <Input
+            label="نام"
+            name="firstName"
+            props={{ placeholder: "خورشید" }}
+            formik={formik}
+            className="flex-1"
+          />
+          <Input
+            label=" نام خانوادگی"
+            name="lastName"
+            props={{ placeholder: "مرادحسینی" }}
+            formik={formik}
+            className="flex-1"
+          />
+        
+        <Input label="ایمیل" name="email" formik={formik} />
         <Input
-          label="Phone Number"
+          label="تلفن همراه"
           name="phoneNumber"
           formik={formik}
           type="tel"
         />
         <Input
-          label="Password"
+          label="رمز عبور"
           name="password"
           formik={formik}
           type="password"
         />
         <Input
-          label="Password Coniform"
+          label="تایید رمز عبور"
           name="passwordConform"
           formik={formik}
           type="password"
         />
+        <div className="my-4">
+          <TermsBox
+            formik={formik}
+            name="terms"
+            label="موافقت با شرایط و استفاده از خدمات"
+          />
+        </div>
 
+        <div className="flex items-start justify-between w-full">
+          <button
+            className="my-8 sm:text-sm bg-primary-color rounded-md disabled:bg-red-200 disabled:cursor-not-allowed disabled:text-gray-500  p-2 text-white"
+            type="submit"
+            disabled={!formik.isValid}
+          >
+            تکمیل ثبت نام
+          </button>
         <Link to={`/login?redirect=${redirect}`}>
-          <p className="switchAccount">Already have a account ?</p>
+          <p className="text-sm md:text-base">حساب کاربری دارید؟ ورود</p>
         </Link>
-        <button type="submit" className="btn" disabled={!formik.isValid}>
-          Sign Up
-        </button>
+        </div>
 
         {error && toast.error(error)}
       </form>

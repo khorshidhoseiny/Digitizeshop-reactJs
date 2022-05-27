@@ -1,6 +1,18 @@
 .App {
 	text-align: center;
 }
+input{
+  border: 2px solid #f1f1f1;
+  padding: 0.75rem;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  width: 100%;
+}
+input label{
+  display: flex;
+  align-items: flex-start;
+}
 
 .ProductList {
 	display: grid;
