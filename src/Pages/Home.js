@@ -18,7 +18,7 @@ const HomePage = () => {
   const addToCartHandler = (product) => {
     dispatch({ type: "ADD_TO_CART", payload: product });
     toast.success(`${product.name} به سبد خرید اضافه شد 😀`);
-    // console.log(product);
+    
   };
   return (
     <Layout>
@@ -27,7 +27,7 @@ const HomePage = () => {
           {data.products.map((product) => {
             return (
               <section
-                className=" items-center justify-center border-gray-100 border-2 mt-3 flex md:flex-col w-full "
+                className=" items-center justify-center border-gray-100 border-2 mt-10 hover:shadow-lg flex md:flex-col w-full "
                 key={product.id}
               >
                 <div className="flex justify-center items-end">

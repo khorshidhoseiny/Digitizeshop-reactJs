@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useCart, useCartAction } from "../Context/CartProvider";
 import Layout from "../Layout/Layout";
 import { FiTruck } from "react-icons/fi";
+import { toast } from "react-toastify";
 import { VscSymbolRuler } from "react-icons/vsc";
 import { AiOutlineSafety } from "react-icons/ai";
 import { BiStoreAlt } from "react-icons/bi";
@@ -151,16 +152,16 @@ const CartSummery = ({ total, cart }) => {
       </p>
 
       <div className="md:border-gray-200  flex  border-t-2 border-gray-200  bottom-0 left-0 right-0 m-0 py-2 px-4 flex-row  items-center  justify-between ">
-        <Link
+        <Link onClick={()=>toast.success("سفارش شما با موفقیت ثبت شد!")}
           className="m-0 ml-4 max-w-xs text-white bg-primary-color w-full text-center py-4 px-6 items-start justify-start rounded-lg"
-          to={"/signup?redirect=checkout"}
+          to={"/"}
         >
           <button>
-            ادامه خرید
+            ثبت سفارش
           </button>
         </Link>
-        <div className="flex flex-col gap-x-2 items-center  md:flex-row ">
-          <span className="text-gray-500 mb-2">جمع سبد خرید </span>
+        <div className="flex flex-col gap-x-2 items-center w-full md:flex-row ">
+          <span className="text-gray-500 mb-2 text-sm p-x-2">جمع سبد خرید </span>
           <p> {total}تومان</p>
         </div>
       </div>

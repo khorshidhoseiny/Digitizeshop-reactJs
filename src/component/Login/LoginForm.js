@@ -3,20 +3,20 @@ import Input from "../../common/Forms/Input";
 import * as Yup from "yup";
 import { LoginUsers } from "../../service/LoginService";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate,Link  } from "react-router-dom";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
 import { useAuth, useAuthAction } from "../../Context/AuthProvider";
 import { useQuery } from "../../hooks/useQuery";
 import { useEffect } from "react";
 
-const LoginForm = ({ history }) => {
+const LoginForm = () => {
+  const navigate = useNavigate();
   const params = useParams();
   const query = useQuery();
   const redirect = query.get("redirect") || "/";
   const auth = useAuth();
   useEffect(() => {
-    if (auth) history.push(redirect);
+    if (auth) navigate(redirect);
   }, [redirect]);
   console.log(redirect);
   const setAuth = useAuthAction();
@@ -33,7 +33,7 @@ const LoginForm = ({ history }) => {
       setAuth(data);
       //   localStorage.setItem("authState", JSON.stringify(data));
       console.log(data);
-      history.push(redirect);
+      navigate(redirect);
       toast.success("با موفقیت وارد شدید !");
     } catch (error) {
       console.log(error);

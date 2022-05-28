@@ -2,7 +2,7 @@ import { useFormik } from "formik";
 import Input from "../../common/Forms/Input";
 import * as Yup from "yup";
 import TermsBox from "../../common/Forms/TermsBox";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams,useNavigate } from "react-router-dom";
 import { signUpUsers } from "../../service/signup";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
@@ -10,6 +10,8 @@ import { useAuth, useAuthAction } from "../../Context/AuthProvider";
 import { useQuery } from "../../hooks/useQuery";
 
 const SignUpForm = ({ history }) => {
+
+  const navigate = useNavigate();
   const params = useParams();
   const query = useQuery();
   const redirect = query.get("redirect") || "/";
@@ -38,7 +40,7 @@ const SignUpForm = ({ history }) => {
       setAuth(data);
       console.log(data);
       setError(null);
-      history.push(redirect);
+      navigate("/");
       toast.success(` جان خوش اومدی${name} `);
     } catch (error) {
       console.log(error);
