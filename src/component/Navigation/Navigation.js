@@ -1,101 +1,86 @@
 import { Link, NavLink } from "react-router-dom";
-import { useAuth } from "../../Context/AuthProvider";
-import { useCart } from "../../Context/CartProvider";
+import { useAuth } from "../Context/AuthProvider";
+import { useCart } from "../Context/CartProvider";
+import { FiSearch } from "react-icons/fi";
+import { BsCart2 } from "react-icons/bs";
+import { AiOutlineUser } from "react-icons/ai";
 
 const Navigation = () => {
   const { cart } = useCart();
-  const userAuth = useAuth();
   const user = useAuth();
-  console.log(userAuth);
+  console.log(user);
   return (
-    <header className=" w-full flex justify-center h-16 items-center">
-      <nav className="w-full justify-between flex items-center px-2 border-b-2 mx-5 border-gray-200">
-        <ul className="flex items-center justify-center mt-5">
-          <li className="flex justify-center items-center ">
-            <NavLink to="/">
-              <p className="text-primary-color text-sm md:text-xl odd:font-semibold">
-                فروشگاه
-              </p>
-            </NavLink>
+    <header className="bg-white ml-2 px-3 py-4 border-b border-gray-300 justify-between flex items-center w-full h-15">
+      <ul className="flex items-center justify-center ">
+        <li className="flex justify-center items-center ">
+          <NavLink to="/">
+            <p className="text-primary-color lg:text-3xl text-xl md:text-xl font-bold">
+              Digitize
+            </p>
+          </NavLink>
+        </li>
+      </ul>
+      <ul className="flex items-center justify-center ml-5 gap-x-4">
+        {user ? (
+          <li className="ml-1 flex flex-col justify-center items-center ">
+            <Link
+              to="/profile"
+              className="flex justify-between flex-col items-center"
+            >
+              <AiOutlineUser className="text-3xl text-gray-700"/>
+            </Link>
           </li>
-        </ul>
-        <ul className="flex items-center  justify-center mt-5 gap-x-2">
-          {useAuth ? (
-            <li className="ml-1 flex flex-col justify-center items-center my-5">
-              <Link to="/profile" className="flex justify-between flex-col items-center">
-                <img
-                  src={process.env.PUBLIC_URL + `/assets/avatar.png`}
-                  className="rounded-full flex justify-center items-center w-12"
-                />
-                <p className="font-semibold text-primary-color flex justify-between items-center">
-                  <span className="text-black m-1 font-normal">سلام</span> {user.name}
+        ) : (
+          <>
+            <li className="flex  border rounded-xl border-gray-200 w-auto p-1 ">
+              <NavLink
+                to={user ? "/profile" : "/login"}
+                className="flex items-center "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 lg:h-8 lg:w-8 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
+                  />
+                </svg>
+                <p className="text-text-color text-sm font-semibold p-2 ">
+                  ورود
                 </p>
-              </Link>
+              </NavLink>
+              <p className="text-gray-200 flex items-center justify-center text-lg">
+                |
+              </p>
+              <NavLink to={user ? "/profile" : "/signup"}>
+                <p className="text-text-color text-sm font-semibold p-2 ">
+                  ثبت نام
+                </p>
+              </NavLink>
             </li>
-          ) : (
-            <>
-              <li className="flex border rounded-xl border-gray-200 w-auto p-1 ">
-                <NavLink
-                  to={userAuth ? "/profile" : "/login"}
-                  className="flex items-center "
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
-                    />
-                  </svg>
-                  <p className="text-text-color text-sm font-semibold p-2 ">
-                    ورود
-                  </p>
-                </NavLink>
-                <p className="text-gray-200 flex items-center justify-center text-lg">
-                  |
-                </p>
-                <NavLink to={userAuth ? "/profile" : "/signup"}>
-                  <p className="text-text-color text-sm font-semibold p-2 ">
-                    ثبت نام
-                  </p>
-                </NavLink>
-              </li>
-              
-            </>
-          )}
-          <li className="relative mx-3">
-                <NavLink
-                  to="/cart"
-                  className={(navLink) =>
-                    navLink.isActive ? "activeLink" : ""
-                  }
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-8 flex items-center relative justify-center stroke-gray-600"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                    />
-                  </svg>
-                </NavLink>
-                <span className="absolute top-1 -right-3  w-4 h-4 bg-primary-color rounded-md text-sm flex items-center justify-center text-white font-semibold">
-                  {cart.length}
-                </span>
-              </li>
-        </ul>
-      </nav>
+          </>
+        )}
+        <p className="text-gray-400 ml-3 flex items-center justify-center text-lg">
+                |
+              </p>
+        <li className="relative flex justify-center items-center ">
+          <NavLink
+            to="/cart"
+            className={(navLink) => (navLink.isActive ? "activeLink" : "")}
+          >
+            <BsCart2 className="text-2xl h-7 w-8 text-gray-700"/>
+          </NavLink>
+          <span className="absolute top-0 -right-3.5 w-5 h-5 bg-primary-color rounded-md text-sm flex items-center justify-center text-white font-semibold">
+            {cart.length}
+          </span>
+        </li>
+      </ul>
     </header>
   );
 };

@@ -21,9 +21,7 @@ const TermsBox = ({ formik, name, label }) => {
       </label>
       <span
         className={`${
-          formik.errors[name]
-            ? "flex text-red-600 mt-2 gap-x-2 justify-start items-center"
-            : "hidden"
+          formik.errors[name] && formik.touched[name] ? " flex  text-red-600 mt-2 gap-x-2 justify-start items-start " : "hidden"
         }`}
       >
         <BiErrorCircle />

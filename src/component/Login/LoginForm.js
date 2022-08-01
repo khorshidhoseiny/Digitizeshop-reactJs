@@ -3,15 +3,14 @@ import Input from "../../common/Forms/Input";
 import * as Yup from "yup";
 import { LoginUsers } from "../../service/LoginService";
 import { useState } from "react";
-import { useParams,useNavigate,Link  } from "react-router-dom";
+import { useNavigate,Link  } from "react-router-dom";
 import { toast } from "react-toastify";
-import { useAuth, useAuthAction } from "../../Context/AuthProvider";
+import { useAuth, useAuthAction } from "../Context/AuthProvider";
 import { useQuery } from "../../hooks/useQuery";
 import { useEffect } from "react";
 
 const LoginForm = () => {
   const navigate = useNavigate();
-  const params = useParams();
   const query = useQuery();
   const redirect = query.get("redirect") || "/";
   const auth = useAuth();
