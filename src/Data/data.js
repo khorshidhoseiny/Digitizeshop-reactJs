@@ -90,7 +90,7 @@ export const products = [
     id: 9,
   },
   {
-    name: "کفش روزمره مردانه مدل کفش روزمره مردانه شوپا مدل wh6100white",
+    name: "کفش روزمره مردانه مدل wh6100white",
     size: [39, 38, 40, 42],
     fast: true,
     star: 4.4,
