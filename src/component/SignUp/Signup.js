@@ -61,7 +61,10 @@ const SignUpForm = ({ history }) => {
       .matches(/^[0-9]{11}$/, "شماره ای که وارد کردید اشتباه است")
       .nullable(),
     password: Yup.string()
-      .required("وارد کردن پسورد الزامی است"),
+      .required("وارد کردن پسورد الزامی است").matches(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+        "رمز شما باید حداقل دارای 8 کاراکتر , حروف کوچک و بزرگ , عدد و یک کاراکتر خاص  باشد"
+      ),
     terms: Yup.boolean().oneOf(
       [true],
       "لطفا موافقت با شرایط و استفاده از خدمات را تایید نمایید."
@@ -80,8 +83,8 @@ const SignUpForm = ({ history }) => {
   });
 
   return (
-    <div className="container mx-auto bg-white justify-center flex-col items-center py-2 px-8 ">
-      <div className="items-start w-full flex flex-col relative">
+    <div className="container mx-auto bg-gray-200 justify-center flex-col items-center py-2 px-8 ">
+      <div className="items-start w-full flex flex-col mt-8 relative">
         <h1 className="font-bold text-2xl">عضویت</h1>
         <p className="text-lg mt-2">
           لطفا برای عضویت اطلاعات این فرم را تکمیل کنید.

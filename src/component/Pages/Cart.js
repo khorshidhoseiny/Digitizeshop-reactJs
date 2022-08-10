@@ -1,4 +1,4 @@
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useCart, useCartAction } from "../Context/CartProvider";
 import Layout from "../Layout/Layout";
 import { FiTruck } from "react-icons/fi";
@@ -8,6 +8,7 @@ import { BiStoreAlt } from "react-icons/bi";
 import numberFormat from "../../common/utils/numberFormat";
 import { BiTrashAlt } from "react-icons/bi";
 import CartSummery from "../CartSummery.js/CartSummery";
+import Empty from "../Empty/Empty";
 
 const CartPage = () => {
   const dispatch = useCartAction();
@@ -23,19 +24,12 @@ const CartPage = () => {
   if (!cart.length) {
     return (
       <Layout>
-        <div className="flex flex-col justify-center items-center">
-          <img
-            className="w-80"
-            src={process.env.PUBLIC_URL + `/assets/empty-box.png`}
-          />
-          <h2 className="font-bold md:text-2xl"> سبد خرید شما خالی است </h2>
-          <h5>برای مشاهده محصولات به لینک زیر بروید </h5>
-          <Link to="/">
-            <button className="my-8 sm:text-sm bg-primary-color rounded-md disabled:bg-red-200 disabled:cursor-not-allowed disabled:text-gray-500  p-2 text-white">
-              صفحه اصلی
-            </button>
-          </Link>
-        </div>
+        <Empty
+          title="سبد خرید شما خالی است!"
+          description="برای مشاهده محصولات به صفحه زیر بروید:"
+          titleLink="صفحه اصلی"
+          to="/"
+        />
       </Layout>
     );
   }
@@ -43,12 +37,12 @@ const CartPage = () => {
   return (
     <Layout>
       {cart.length && (
-        <section className="flex flex-col mx-auto lg:flex-row lg:mx-8 mt-1">
+        <section className="flex flex-col gap-x-5 mx-auto lg:flex-row lg:mx-8 mt-1">
           {/* product info */}
-          <section className="flex flex-col lg:w-8/12">
+          <section className="flex flex-col lg:w-9/12">
             {cart.map((item) => (
               <div
-                className=" flex items-center lg:mt-4 w-screen  lg:w-11/12 justify-start py-6 border-b px-12 pb-12 lg:border rounded-lg lg:border-gray-300 gap-y-2"
+                className=" flex items-center lg:mt-4 w-screen  lg:w-full  justify-start py-6 border-b px-12 pb-12 lg:border rounded-lg lg:border-gray-300 gap-y-2"
                 key={item.id}
               >
                 <div className="flex flex-col justify-center items-center">

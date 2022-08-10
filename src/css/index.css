@@ -21,7 +21,7 @@
       @apply border-4 flex justify-center items-center border-blue-400
     }
     .description {
-      @apply flex text-lg flex-col items-start flex-grow w-full text-gray-300
+      @apply flex lg:text-lg text-base text-right flex-col items-start flex-grow w-full text-gray-300
     }
     .description li{
       @apply mt-4 text-gray-500
@@ -33,18 +33,22 @@
       @apply mb-4 text-2xl text-black
     }
     .info{
-      @apply w-full mt-4 mb-9 self-start text-lg 
+      @apply w-full mt-4 mb-10 text-right text-base self-start lg:text-lg 
     }
     .info li {
-      @apply flex  items-center mb-5  justify-start text-gray-700
+      @apply flex  items-start  mb-5 text-right justify-start text-gray-700
     }
     .info li svg{
       @apply ml-2 cursor-default
     }
     .cartSummeryFooterBtn{
-      @apply max-w-xs bg-primary-color w-full text-white py-5 px-6 text-center mt-4 rounded-lg -order-1 m-0 ml-4
+      @apply max-w-xs bg-primary-color w-full text-white text-sm  lg:text-base py-2 px-3 lg:py-3 lg:px-4
+       text-center lg:mt-4 rounded-lg -order-1 m-0 ml-4
     }
     .CartBtn{
       @apply bg-primary-color transition-all w-9 h-9 flex justify-center items-center rounded-full text-white
+    }
+    .container{
+      @apply flex justify-center mx-auto bg-gray-300
     }
   }

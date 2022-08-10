@@ -30,7 +30,7 @@ const ProductDetail = () => {
         {/* Product Detail */}
         <section className="w-full lg:w-9/12  border-2 border-gray-200 rounded-lg py-5 px-4 ">
           <div className="w-full flex justify-between items-center ">
-            <h3 className="text-2xl font font-semibold mb-3 text-black">
+            <h3 className="text-lg lg:text-2xl md:text-xl font font-semibold mb-3 text-black">
               {state.name}
             </h3>
             <Link
@@ -45,7 +45,7 @@ const ProductDetail = () => {
               src={state.image}
               className="mx-auto lg:mr-0 mt-2 w-full max-w-[350px]"
             />
-            <div className="w-full flex flex-col  items-start mr-4 ">
+            <div className="w-full flex flex-col items-start mr-4 ">
               <Select
                 options={options}
                 onChange={(e) => setValue(e.target.value)}
@@ -72,13 +72,13 @@ const ProductDetail = () => {
                 </li>
                 <li>
                   <p>
-                    ویژگی‌های زیره :{" "}
+                    ویژگی‌های زیره :
                     <span>انعطاف پذیر، مقاوم در برابر سایش</span>
                   </p>
                 </li>
                 <li>
                   <p>
-                    ویژگی‌های تخصصی کفش : <span>قابلیت گردش هوا</span>
+                  ویژگی‌های تخصصی کفش : <span>قابلیت گردش هوا</span>
                   </p>
                 </li>
               </ul>
@@ -114,9 +114,9 @@ const ProductDetail = () => {
             </li>
           </ul>
           <div className="border-t-2 border-gray-200 w-full py-3 px-6 mx-auto flex items-center justify-between flex-row lg:flex-col fixed lg:relative left-0 bottom-0 bg-white ">
-            <div className="flex flex-col w-full text-lg lg:justify-between lg:flex-row lg:gap-x-3 lg:items-center justify-center ">
-              <span className="text-gray-600  lg:m-0 mt-4">قیمت با تخفیف</span>
-              <p>{numberFormat(state.offPrice)} تومان</p>
+            <div className="flex flex-col w-full justify-end text-lg md:w-auto lg:justify-between  lg:mt-3 lg:flex-row lg:gap-x-3 lg:items-center ">
+              <span className="text-gray-600  text-sm lg:text-base  ">قیمت با تخفیف</span>
+              <p className="text-sm lg:text-base">{numberFormat(state.offPrice)} تومان</p>
             </div>
 
             {checked(cart, state) ? (

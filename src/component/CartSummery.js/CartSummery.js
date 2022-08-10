@@ -23,9 +23,9 @@ const CartSummery = () => {
       <p className="mt-6 lg:my-6 text-sm mb-32 text-gray-500 flex items-start">
         هزینه ارسال براساس آدرس، زمان تحویل، وزن و حجم مرسوله شما محاسبه می‌شود
       </p>
-      <div className="lg:border-gray-200 overflow-y-hidden w-full bg-white bottom-0 lg:my-5 justify-around fixed lg:relative flex border-t-2 border-gray-200 py-5 lg:pt-8 flex-row items-center ">
+      <div className="lg:border-gray-200 flex-1 lg:px-4 w-full bg-white bottom-0 lg:my-5 lg:justify-between justify-around fixed lg:relative flex border-t-2 border-gray-200 py-5 lg:pt-8 flex-row items-center ">
         <Link
-          className="lg:mr-4 max-w-xs text-white bg-primary-color w-full text-center py-4 md:py-4 px-2 items-center justify-center rounded-lg"
+          className=" text-white w-2/4 lg:w-2/4 bg-primary-color text-sm lg:text-base   md:w-96 mx-auto text-center md:py-3 md:px-2 py-3 px-4 items-center justify-center rounded-lg"
           to={"/login?redirect=/"}
         >
           <button
@@ -37,9 +37,9 @@ const CartSummery = () => {
             ثبت سفارش
           </button>
         </Link>
-        <div className="flex flex-col items-center lg:w-full  ">
-          <span className="text-gray-500 mb-2 text-sm mx-2">جمع سبد خرید</span>
-          <p> {total}تومان</p>
+        <div className="flex md:flex-row flex-col lg:flex-col gap-y-2 pl-6 lg:pl-0 mx-auto font-semibold items-center  overflow-x-hidden  ">
+          <span className="text-gray-500 text-sm mx-2">جمع سبد خرید</span>
+          <p> {total}تومان  </p>
         </div>
       </div>
     </section>

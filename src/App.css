@@ -69,8 +69,4 @@ input label{
   width: 20vw;
   border-radius: 1rem;
 }
-.container{
-  display: flex;
-  justify-content: center;
-  background-color: #e9e7e7;
-}
+

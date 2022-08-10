@@ -15,7 +15,6 @@ const HomePage = () => {
   const [filterToggle, setFilterToggle] = useState(false);
   const { label } = sortOptions.find((item) => item.value === sort);
 
-
   return (
     <Layout>
       <section className="flex">
@@ -28,12 +27,12 @@ const HomePage = () => {
 
         <main className="w-full flex flex-col justify-start items-center">
           <section className="lg:w-3/4 w-full mr-3 flex py-4 justify-start text-xl items-center">
-            <nav className="flex items-center justify-start !w-full font-bold">
+            <nav className="flex items-center  justify-start !w-full font-bold">
               <section
-                className="relative flex lg:hidden items-center justify-start cursor-pointer w-auto h-full ml-10 "
+                className="relative flex lg:hidden items-center mr-5 justify-start cursor-pointer w-auto h-full ml-10 "
                 onClick={() => setFilterToggle(true)}
               >
-                <div className="text-2xl cursor-pointer">
+                <div className="text-2xl  cursor-pointer">
                   <BiSliderAlt className="text-2xl cursor-pointer inline-flex items-center justify-center relative" />
                   {total.length > 0 && (
                     <span className="absolute top-[1px] -left-3 w-2 h-2 rounded-full bg-red-600"></span>
@@ -90,9 +89,7 @@ const HomePage = () => {
               </section>
             </nav>
           </section>
-          <section className="grid grid-cols-1 md:grid-cols-3 w-full lg:grid-cols-4 px-7 ">
-            <ProductList />
-          </section>
+          <ProductList />
         </main>
       </section>
     </Layout>

@@ -9,7 +9,7 @@ const InputRadio = ({ options, name, value, onChange }) => {
           id={item.value}
           value={item.value}
           onChange={onChange}
-          className="ml-2 appearance-none border border-gray-400 checked:bg-blue-400 mr-4 w-auto rounded-md"
+          className="ml-2 appearance-none border border-gray-400 checked:bg-primary-color mr-4 w-auto rounded-md"
           checked={item.value === parseInt(value)}
         />
         

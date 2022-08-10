@@ -58,8 +58,8 @@ const LoginForm = () => {
   });
 
   return (
-    <div className="container bg-white justify-center flex-col items-center py-2 px-8 ">
-      <div className="items-start w-full flex flex-col relative ">
+    <div className="container bg-gray-200 justify-start h-screen flex-col items-start py-2 px-8 ">
+      <div className="items-start w-full mt-10 flex flex-col relative ">
         <h1 className="font-bold text-2xl">ورود</h1>
         <p className="text-sm mt-2">
           لطفا نام کاربری و رمز عبور خود را وارد کنید

@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../Context/AuthProvider";
 import { useCart } from "../Context/CartProvider";
+import { HiOutlineLogin } from "react-icons/hi";
 import { FiSearch } from "react-icons/fi";
 import { BsCart2 } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
@@ -14,7 +15,7 @@ const Navigation = () => {
       <ul className="flex items-center justify-center ">
         <li className="flex justify-center items-center ">
           <NavLink to="/">
-            <p className="text-primary-color lg:text-3xl text-xl md:text-xl font-bold">
+            <p className="text-primary-color mr-5 lg:text-3xl text-2xl font-bold">
               Digitize
             </p>
           </NavLink>
@@ -32,26 +33,13 @@ const Navigation = () => {
           </li>
         ) : (
           <>
-            <li className="flex  border rounded-xl border-gray-200 w-auto p-1 ">
+            <li className="flex mr-3  border rounded-xl border-gray-200 w-auto p-1 ">
               <NavLink
                 to={user ? "/profile" : "/login"}
                 className="flex items-center "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 lg:h-8 lg:w-8 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
-                  />
-                </svg>
-                <p className="text-text-color text-sm font-semibold p-2 ">
+                <HiOutlineLogin/>
+                <p className="text-text-color text-xs lg:text-sm font-semibold p-2 ">
                   ورود
                 </p>
               </NavLink>
@@ -59,14 +47,14 @@ const Navigation = () => {
                 |
               </p>
               <NavLink to={user ? "/profile" : "/signup"}>
-                <p className="text-text-color text-sm font-semibold p-2 ">
+                <p className="text-text-color text-xs lg:text-sm font-semibold p-2 ">
                   ثبت نام
                 </p>
               </NavLink>
             </li>
           </>
         )}
-        <p className="text-gray-400 ml-3 flex items-center justify-center text-lg">
+        <p className="text-gray-400 lg:ml-3 ml-1 flex items-center justify-center text-lg">
                 |
               </p>
         <li className="relative flex justify-center items-center ">

@@ -15,7 +15,7 @@ const InputRange = ({ name, value, onChange, min, max, step }) => {
         step={step}
         className="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer  "
       />
-      <label>
+      <label className="font-normal">
         <span> از <strong>0</strong> تومان</span>
         <span> تا <strong>{numberFormat(value)}</strong> تومان</span>
       </label>

@@ -26,7 +26,7 @@ const Sort = ({ setToggle }) => {
           className="flex items-center  justify-start lg:justify-center py-5 cursor-pointer "
           htmlFor={item.value}
         >
-          <p className=" justify-center text-lg checked:text-red-600 items-center flex ">
+          <p className=" justify-center text-xl md:text-base checked:text-red-600 items-center flex ">
             {item.label}
           </p>
         </label>

@@ -12,7 +12,7 @@ const Accordian = ({ title, children }) => {
         <p>{title}</p>
         <IoIosArrowDown className="text-xl cursor-pointer" />
       </div>
-      {toggle ? <div className="w-full py-4 ">{children}</div> : ""}
+      {toggle ? <div className="w-full ">{children}</div> : ""}
     </>
   );
 };
