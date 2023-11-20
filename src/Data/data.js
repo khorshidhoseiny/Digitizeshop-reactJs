@@ -1,12 +1,12 @@
 export const products = [
   {
-    name:" کفش روزمره مردانه مدل BAOJI-ME",
+    name: " کفش روزمره مردانه مدل BAOJI-ME",
     size: [38, 39, 40, 43, 44],
     fast: true,
     star: 4.7,
     price: 600000,
     offPrice: 229000,
-    image: "https://s6.uupload.ir/files/fb5eb2d6c8087b8881ac126ae00f313aedefffb0_1641025567_yrld.jpg",
+    image: "https://s6.uupload.ir/files/1_fc5g.png",
     id: 1,
   },
   {
@@ -16,19 +16,20 @@ export const products = [
     star: 4.5,
     price: 1500000,
     offPrice: 890000,
-    image: "https://s6.uupload.ir/files/d7aa2a090465a5ef23607f8c04a3648509b57e4b_1653914158_pq3q.jpg",
+    image: "https://s6.uupload.ir/files/2_8qb9.jpg",
     id: 2,
   },
   {
-    name:" کفش طبی مردانه کروماکی مدل kms442",
-    size:[39, 40, 41, 42, 43],
+    name: " کفش طبی مردانه کروماکی مدل kms442",
+    size: [39, 40, 41, 42, 43],
     fast: true,
     star: 4.9,
     price: 750000,
     offPrice: 730000,
-    image: "https://s6.uupload.ir/files/c2f04fff2f1489939a6bca83b5b71471ea4fe9d0_1653588393_8en.jpg",
+    image: "https://s6.uupload.ir/files/3_v2en.jpg",
     id: 3,
   },
+
   {
     name: " کفش روزمره مردانه کروماکی مدل km110078",
     size: [37, 39, 42, 43],
@@ -36,7 +37,7 @@ export const products = [
     star: 3.9,
     price: 490000,
     offPrice: 480000,
-    image: "https://s6.uupload.ir/files/24785f524824788bf58787125415c596fa4bed68_1645265537_cgej.jpg",
+    image: "https://s6.uupload.ir/files/4_mov.jpg",
     id: 4,
   },
   {
@@ -46,27 +47,27 @@ export const products = [
     star: 4,
     price: 320000,
     offPrice: 300000,
-    image: "https://s6.uupload.ir/files/370e76f0cc007fd87a3d7d6742677f05c5001171_1607865745_8734.jpg",
+    image: "https://s6.uupload.ir/files/5_5xzo.jpg",
     id: 5,
   },
   {
     name: "کفش روزمره مردانه مدل GZ4",
-    size: [ 40, 44],
+    size: [40, 44],
     fast: true,
     star: 4.2,
     price: 220000,
     offPrice: 200000,
-    image: "https://s6.uupload.ir/files/2a81df3bb9613ffe624a8bca34467fafe967c75e_1637241285_t6hr.jpg",
+    image: "https://s6.uupload.ir/files/6_c22c.jpg",
     id: 6,
   },
   {
     name: "کفش روزمره مردانه مدل 3625",
-    size: [ 38, 40],
+    size: [38, 40],
     fast: false,
     star: 3.5,
     price: 220000,
     offPrice: 200000,
-    image: "https://s6.uupload.ir/files/1fa3ff917a09d210977584eca9f8cc37c404f321_1655462654_cz6z.jpg",
+    image: "https://s6.uupload.ir/files/7_u6x4.jpg",
     id: 7,
   },
   {
@@ -76,7 +77,7 @@ export const products = [
     star: 3.7,
     price: 420000,
     offPrice: 200000,
-    image: "https://s6.uupload.ir/files/495a09e2276c20f49b45a67527cb6435e1b0002f_1622357529_pgzx.jpg",
+    image: "https://s6.uupload.ir/files/9_oyxz.jpg",
     id: 8,
   },
   {
@@ -86,7 +87,7 @@ export const products = [
     star: 4.5,
     price: 220000,
     offPrice: 200000,
-    image: "https://s6.uupload.ir/files/443afc8b19516a9a4dbd3e27bece76ca67e0cd8c_1609060218_pc2.jpg",
+    image: "https://s6.uupload.ir/files/8_0zra.jpg",
     id: 9,
   },
   {
@@ -96,7 +97,7 @@ export const products = [
     star: 4.4,
     price: 520000,
     offPrice: 300000,
-    image: "https://s6.uupload.ir/files/98f43a2680c4fa8b0e2593c87658f30a6036c3be_1650789534_irxg.jpg",
+    image: "https://s6.uupload.ir/files/10_tkbe.jpg",
     id: 10,
   },
   {
@@ -106,7 +107,7 @@ export const products = [
     star: 3.2,
     price: 300000,
     offPrice: 280000,
-    image: "https://s6.uupload.ir/files/10252e1f21e8492ab9e03e59e1bb62928caab733_1653223185_3mb.jpg",
+    image: "https://s6.uupload.ir/files/11_zvko.jpg",
     id: 11,
   },
   {
@@ -116,10 +117,9 @@ export const products = [
     star: 4.8,
     price: 520000,
     offPrice: 300000,
-    image: "https://s6.uupload.ir/files/a985827dde06c2f31935e9d5eef10e664e8ca094_1645265608_me6s.jpg",
+    image: "https://s6.uupload.ir/files/12_9f0k.jpg",
     id: 12,
   },
-
 ];
 
 export const sizeOptions = [
