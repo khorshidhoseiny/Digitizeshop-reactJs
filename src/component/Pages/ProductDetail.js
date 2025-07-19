@@ -58,27 +58,30 @@ const ProductDetail = () => {
               </p>
               <ul className="description">
                 <li>
-                  <h3>ویژگی ها</h3>
+                  <h3 className="text-md">ویژگی ها</h3>
                 </li>
                 <li>
                   <p>
-                    کفی : <span>قابل تعویض</span>
+                    کفی : <span className="text-sm">قابل تعویض</span>
                   </p>
                 </li>
                 <li>
                   <p>
-                    نحوه بسته شدن کفش : <span>یکسره</span>
+                    نحوه بسته شدن کفش : <span className="text-sm">یکسره</span>
                   </p>
                 </li>
                 <li>
                   <p>
                     ویژگی‌های زیره :
-                    <span>انعطاف پذیر، مقاوم در برابر سایش</span>
+                    <span className="text-sm">
+                      انعطاف پذیر، مقاوم در برابر سایش
+                    </span>
                   </p>
                 </li>
                 <li>
                   <p>
-                  ویژگی‌های تخصصی کفش : <span>قابلیت گردش هوا</span>
+                    ویژگی‌های تخصصی کفش :{" "}
+                    <span className="text-sm">قابلیت گردش هوا</span>
                   </p>
                 </li>
               </ul>
@@ -89,24 +92,24 @@ const ProductDetail = () => {
         <section className="w-full lg:w-3/12 flex flex-col items-start justify-start border-2 border-gray-200 rounded-lg  p-4 lg:py-1 ">
           <ul className="info">
             <li>
-              <h2 className="font-bold">فروشنده : آنلاین شاپ</h2>
+              <h2 className="font-bold">فروشنده : دیجی تایز</h2>
             </li>
             <li>
               <AiOutlineSafety className="icons" />
-              <span>گارانتی سلامت فیزیکی کالا</span>
+              <span className="text-sm">گارانتی سلامت فیزیکی کالا</span>
             </li>
             <li>
               <VscSymbolRuler className="icons" />
-              <span>{state.size.join(",")}</span>
+              <span className="text-sm">{state.size.join(` - `)}</span>
             </li>
             <li>
               <BiStoreAlt className="icons" />
-              <span>موجود در انبار</span>
+              <span className="text-sm">موجود در انبار</span>
             </li>
             {state.fast && (
               <li>
                 <RiRocketLine className="icons text-purple" />
-                <span>ارسال سریع</span>
+                <span className="text-sm">ارسال سریع</span>
               </li>
             )}
             <li className="!text-primary-color">
@@ -115,8 +118,12 @@ const ProductDetail = () => {
           </ul>
           <div className="border-t-2 border-gray-200 w-full py-3 px-6 mx-auto flex items-center justify-between flex-row lg:flex-col fixed lg:relative left-0 bottom-0 bg-white ">
             <div className="flex flex-col w-full justify-end text-lg md:w-auto lg:justify-between  lg:mt-3 lg:flex-row lg:gap-x-3 lg:items-center ">
-              <span className="text-gray-600  text-sm lg:text-base  ">قیمت با تخفیف</span>
-              <p className="text-sm lg:text-base">{numberFormat(state.offPrice)} تومان</p>
+              <span className="text-gray-600  text-sm lg:text-base  ">
+                قیمت با تخفیف
+              </span>
+              <p className="text-sm lg:text-base">
+                {numberFormat(state.offPrice)} تومان
+              </p>
             </div>
 
             {checked(cart, state) ? (

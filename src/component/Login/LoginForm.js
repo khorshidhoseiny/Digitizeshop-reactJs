@@ -3,7 +3,7 @@ import Input from "../../common/Forms/Input";
 import * as Yup from "yup";
 import { LoginUsers } from "../../service/LoginService";
 import { useState } from "react";
-import { useNavigate,Link  } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useAuth, useAuthAction } from "../Context/AuthProvider";
 import { useQuery } from "../../hooks/useQuery";
@@ -26,11 +26,12 @@ const LoginForm = () => {
   };
 
   const onSubmit = async (values) => {
-    console.log(values, "ONE SUBMIT");
+    // console.log(values, "ONE SUBMIT");
     try {
       const { data } = await LoginUsers(values);
+      console.log(data);
       setAuth(data);
-      //   localStorage.setItem("authState", JSON.stringify(data));
+      localStorage.setItem("authState", JSON.stringify(data));
       console.log(data);
       navigate(redirect);
       toast.success("با موفقیت وارد شدید !");
@@ -83,9 +84,8 @@ const LoginForm = () => {
             ورود
           </button>
           <p className="cursor-pointer">
-          
             {
-              <Link  to={`/signup?redirect=${redirect}`}>
+              <Link to={`/signup?redirect=${redirect}`}>
                 حساب کاربری نساخته اید؟ ثبت نام
               </Link>
             }{" "}

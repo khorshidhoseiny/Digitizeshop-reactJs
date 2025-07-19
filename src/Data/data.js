@@ -6,7 +6,8 @@ export const products = [
     star: 4.7,
     price: 600000,
     offPrice: 229000,
-    image: "https://s6.uupload.ir/files/1_fc5g.png",
+    image:
+      "https://dkstatics-public.digikala.com/digikala-products/fb5eb2d6c8087b8881ac126ae00f313aedefffb0_1641025567.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/format,webp/quality,q_90",
     id: 1,
   },
   {
